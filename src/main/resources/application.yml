@@ -5,7 +5,7 @@ spring:
     console:
       enabled: true
   datasource:
-    url: jdbc:h2:mem:applications
+    url: jdbc:h2:mem:mockapp
     driver-class-name: org.h2.Driver
     data-username: sa
     data-password:

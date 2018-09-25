@@ -16,13 +16,13 @@ public class records {
         this.recordService = recordService;
     }
 
-    @GetMapping
-    public Record addRecord(@RequestBody Record record){
+    @PostMapping
+    public Record addRecord(@RequestBody Record record ){
         return recordService.addRecord(record);
     }
 
-    @PostMapping
-    public Page fetchRecords(Pageable pageable){
+    @GetMapping
+    public Page fetchRecords( Pageable pageable){
         return recordService.fetchAll(pageable);
     }
 }

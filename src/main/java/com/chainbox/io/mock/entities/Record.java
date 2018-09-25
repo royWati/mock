@@ -10,9 +10,9 @@ public class Record extends BaseEntity {
     private long shortCode;
     private long MSISDN;
     private long KeyWord;
-    private HttpStatus status;
+    private int status;
 
-    public Record(long shortCode, long MSISDN, long keyWord, HttpStatus status) {
+    public Record(long shortCode, long MSISDN, long keyWord, int status) {
         this.shortCode = shortCode;
         this.MSISDN = MSISDN;
         KeyWord = keyWord;
@@ -46,11 +46,11 @@ public class Record extends BaseEntity {
         KeyWord = keyWord;
     }
 
-    public HttpStatus getStatus() {
+    public int getStatus() {
         return status;
     }
 
-    public void setStatus(HttpStatus status) {
+    public void setStatus(int status) {
         this.status = status;
     }
 }

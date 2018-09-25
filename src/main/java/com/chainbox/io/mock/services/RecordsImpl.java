@@ -7,7 +7,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.client.ClientHttpResponse;
+import org.springframework.stereotype.Service;
 
+@Service
 public class RecordsImpl implements Records {
 
     private final RecordsRepo repo;
@@ -19,18 +21,17 @@ public class RecordsImpl implements Records {
     @Override
     public Record addRecord(Record records) {
 
-        if (records.getKeyWord()==0) throw new missingRecords();
-        else{
+
             if(records.getKeyWord()<10){
-                records.setStatus(HttpStatus.OK);
+                records.setStatus(HttpStatus.OK.value());
             }else if (records.getKeyWord()<20){
-                records.setStatus(HttpStatus.BAD_GATEWAY);
+                records.setStatus(HttpStatus.BAD_GATEWAY.value());
             }else if (records.getKeyWord()<30){
-                records.setStatus(HttpStatus.BAD_REQUEST);
+                records.setStatus(HttpStatus.BAD_REQUEST.value());
             }else {
-                records.setStatus(HttpStatus.ACCEPTED);
+                records.setStatus(HttpStatus.ACCEPTED.value());
             }
-        }
+
         return repo.save(records);
     }
 
