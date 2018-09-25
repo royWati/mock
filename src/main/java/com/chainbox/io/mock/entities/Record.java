@@ -9,10 +9,11 @@ public class Record extends BaseEntity {
 
     private long shortCode;
     private long MSISDN;
-    private long KeyWord;
+    private String KeyWord;
     private int status;
+    private String refrenceCode;
 
-    public Record(long shortCode, long MSISDN, long keyWord, int status) {
+    public Record(long shortCode, long MSISDN, String keyWord, int status) {
         this.shortCode = shortCode;
         this.MSISDN = MSISDN;
         KeyWord = keyWord;
@@ -38,11 +39,11 @@ public class Record extends BaseEntity {
         this.MSISDN = MSISDN;
     }
 
-    public long getKeyWord() {
+    public String getKeyWord() {
         return KeyWord;
     }
 
-    public void setKeyWord(long keyWord) {
+    public void setKeyWord(String keyWord) {
         KeyWord = keyWord;
     }
 
@@ -52,5 +53,13 @@ public class Record extends BaseEntity {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public String getRefrenceCode() {
+        return refrenceCode;
+    }
+
+    public void setRefrenceCode(String refrenceCode) {
+        this.refrenceCode = refrenceCode;
     }
 }
